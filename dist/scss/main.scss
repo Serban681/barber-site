@@ -1,0 +1,49 @@
+@import './_variables';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap');
+
+body {
+    background-color: $background-color;
+    margin: 0;
+    font-family: 'Rokkitt', serif;
+}
+
+#hero {
+    background-image: url($hero-bg-path);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    //filter: blur(2px);
+    background-image: blur(2px);
+    color: white;
+    text-align: center;
+
+    .logo {
+        font-family: 'Lobster', cursive;
+        padding-top: 0.5em;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0rem;
+    }
+
+    .hero-subtitle {
+        margin-top: -0.5em;
+        font-weight: 400;
+        margin: 0em 2em;
+        font-size: 1em;
+    }
+
+    .button {
+        background-color: $primary-red;
+        border: none;
+        border-radius: 0.2em;
+        color:white;
+        font-family: 'Rokkitt', serif;
+        padding: 0.5em 0.75em;
+        font-weight: bold;
+        font-size: 1.25em;
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+}
