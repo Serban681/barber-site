@@ -6,38 +6,30 @@ body {
 }
 
 #hero {
+  background-image: url("../images/hero-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: blur(2px);
   color: white;
   text-align: center;
-}
-
-#hero img {
-  z-index: -1;
-  position: absolute;
-  right: 0%;
-  width: 100%;
-  size: cover;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
 }
 
 #hero .logo {
   font-family: 'Lobster', cursive;
   padding-top: 0.5em;
-  margin-top: 0;
-  font-size: xx-large;
-  font-weight: 100;
 }
 
 #hero .hero-title {
-  font-size: 4em;
+  font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 0;
+  margin-bottom: 0rem;
 }
 
 #hero .hero-subtitle {
+  margin-top: -0.5em;
   font-weight: 400;
   margin: 0em 2em;
-  font-size: 1.7em;
+  font-size: 1em;
 }
 
 #hero .button {
@@ -46,9 +38,9 @@ body {
   border-radius: 0.2em;
   color: white;
   font-family: 'Rokkitt', serif;
-  padding: 0.5em 1.7em;
-  font-weight: 600;
-  font-size: 1.7em;
+  padding: 0.5em 0.75em;
+  font-weight: bold;
+  font-size: 1.25em;
   margin-top: 2em;
   margin-bottom: 4em;
 }

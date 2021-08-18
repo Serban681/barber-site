@@ -7,31 +7,37 @@ body {
     font-family: 'Rokkitt', serif;
 }
 
-#hero {
-    background-image: url($hero-bg-path);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    //filter: blur(2px);
-    background-image: blur(2px);
+#hero {   
     color: white;
     text-align: center;
+
+    img {
+        z-index: -1;
+        position: absolute;
+        right:0%;
+        width: 100%;
+        size: cover;
+        filter: blur(2px);
+    }
 
     .logo {
         font-family: 'Lobster', cursive;
         padding-top: 0.5em;
+        margin-top: 0;
+        font-size: xx-large;
+        font-weight: 100;
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 4em;
         font-weight: 800;
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
 
     .hero-subtitle {
-        margin-top: -0.5em;
         font-weight: 400;
         margin: 0em 2em;
-        font-size: 1em;
+        font-size: 1.7em;
     }
 
     .button {
@@ -40,9 +46,9 @@ body {
         border-radius: 0.2em;
         color:white;
         font-family: 'Rokkitt', serif;
-        padding: 0.5em 0.75em;
-        font-weight: bold;
-        font-size: 1.25em;
+        padding: 0.5em 1.7em;
+        font-weight: 600;
+        font-size: 1.7em;
         margin-top: 2em;
         margin-bottom: 4em;
     }
