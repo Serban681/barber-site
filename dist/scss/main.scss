@@ -10,15 +10,10 @@ body {
 #hero {   
     color: white;
     text-align: center;
-
-    img {
-        z-index: -1;
-        position: absolute;
-        right:0%;
-        width: 100%;
-        size: cover;
-        filter: blur(2px);
-    }
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url($hero-bg-path);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .logo {
         font-family: 'Lobster', cursive;
@@ -51,5 +46,12 @@ body {
         font-size: 1.7em;
         margin-top: 2em;
         margin-bottom: 4em;
+    }
+}
+
+#services-section {
+    .section-header {
+        display: flex;
+        align-items: center;
     }
 }
