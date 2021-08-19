@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap");
 body {
   background-color: #E7E7E7;
   margin: 0;
@@ -54,5 +55,55 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#services-section .section-header .line {
+  background-color: #C4C4C4;
+  width: 1em;
+  height: 0.14em;
+  margin: 0 4%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+#services-section .section-header .section-title {
+  font-size: 2.4em;
+  text-align: center;
+}
+
+#services-section div {
+  display: -ms-grid;
+  display: grid;
+  list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-rule-width: 100px;
+          column-rule-width: 100px;
+}
+
+#services-section div figure {
+  background-color: white;
+  border-radius: 0.2em;
+  margin: 0.4em 0em;
+  text-align: center;
+  font-weight: 500;
+  color: #525252;
+}
+
+#services-section div figure .service-name {
+  float: left;
+  padding: 0em 1em;
+}
+
+#services-section div figure .service-price {
+  float: right;
+  padding: 1em 1.25em;
 }
 /*# sourceMappingURL=main.css.map */
