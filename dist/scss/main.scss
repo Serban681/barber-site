@@ -129,19 +129,24 @@ body {
             display: grid;
             text-align: center;
 
-            margin: 1em 5em 2.5em;
+            margin: 0.2em auto 2.5em;
 
             width: 20em;
-            
-            img {
-                margin: 1em auto 0;
-                padding: 0;
-                width: 5em;
-                border-radius: 50%;
-            }
+            height: 28em;
+            box-shadow: 10px 10px 5px rgba(black, 0.25);
 
-            .barber-name {
-                font-size: $secondary-title-size;
+            div {
+                img {
+                    margin: 1em auto 0;
+                    //padding: 0;
+                    width: 6em;
+                    border-radius: 50%;
+                }
+
+                .barber-name {
+                    font-size: $secondary-title-size;
+                    position:relative;
+                }
             }
 
             .barber-quote {
@@ -150,5 +155,20 @@ body {
                 margin: 0 1.8em 2em;
             }
         }
+    }
+}
+
+#about-us-section {
+    margin-left: 1em;
+
+    @include sectionHeader(black, $decoration-color);
+
+    h4 {
+        font-size: $secondary-title-size;
+        letter-spacing: 0.25em;
+    }
+
+    .about-us-description {
+        
     }
 }
