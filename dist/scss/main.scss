@@ -2,6 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap');
 
+@mixin sectionHeader($title-color, $line-color) {
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 1em 0;
+
+        .line {
+            background-color: $line-color;
+            width: 1em;
+            height: 0.14em;
+            margin: 0 4%;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .section-title {
+            font-size: 2.4em;
+            color: $title-color;
+            //flex-grow: 1;
+            text-align: center;
+        }
+    }
+}
+
 body {
     background-color: $background-color;
     margin: 0;
@@ -11,10 +36,16 @@ body {
 #hero {   
     color: white;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-image: url($hero-bg-path);
+    background: linear-gradient(
+        to right, 
+        rgba(black, 0.3),
+        rgba(black, 0.3)
+    ),
+    url($hero-bg-path);
+
     background-repeat: no-repeat;
     background-size: cover;
+
 
     .logo {
         font-family: 'Lobster', cursive;
@@ -51,51 +82,72 @@ body {
 }
 
 #services-section {
-    .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+    @include sectionHeader(black, $decoration-color);
 
-        .line {
-            background-color: $line-color;
-            width: 1em;
-            height: 0.14em;
-            margin: 0 4%;
-            flex-grow: 1;
-            flex-shrink: 1;
-        }
-
-        .section-title {
-            font-size: 2.4em;
-            
-            //flex-grow: 1;
-            text-align: center;
-        }
-    }
+    margin-bottom: 3em;
 
     div {
         display: grid;
-        list-style-type: none;
         justify-content: center;
-        column-rule-width: 100px;
 
         figure {
             background-color: white;
             border-radius: $border-radius;
             margin: 0.4em 0em;
-            text-align: center;
             font-weight: 500;
             color: $secondary-text-color;
+            font-size: $secondary-text-size;
+            padding: 0.8em;
 
             .service-name {
                 float: left;
-                padding: 0em 1em;
-                //max-width: 20em;
+                margin-right: 5em;
             }
             
             .service-price {
                 float: right;
-                padding: 1em 1.25em;
+            }
+        }
+    }
+}
+
+#barbers-section {
+    @include sectionHeader(white, white);
+
+    background-color: $red;
+
+    ul {
+        list-style-type: none;
+        padding: 0 0 5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        li{
+            background-color: white;
+            border-radius: $border-radius;
+            display: grid;
+            text-align: center;
+
+            margin: 1em 5em 2.5em;
+
+            width: 20em;
+            
+            img {
+                margin: 1em auto 0;
+                padding: 0;
+                width: 5em;
+                border-radius: 50%;
+            }
+
+            .barber-name {
+                font-size: $secondary-title-size;
+            }
+
+            .barber-quote {
+                color: $secondary-text-color;
+                font-size: $secondary-text-size;
+                margin: 0 1.8em 2em;
             }
         }
     }
