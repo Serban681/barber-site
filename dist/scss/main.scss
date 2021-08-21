@@ -144,8 +144,9 @@ body {
                 }
 
                 .barber-name {
-                    font-size: $secondary-title-size;
+                    font-size: $secondary-text-size;
                     position:relative;
+                    color: $secondary-title-color;
                 }
             }
 
@@ -163,12 +164,36 @@ body {
 
     @include sectionHeader(black, $decoration-color);
 
-    h4 {
-        font-size: $secondary-title-size;
-        letter-spacing: 0.25em;
-    }
+    display: flex;
+    flex-direction: column;
 
     .about-us-description {
-        
+        h4 {
+            font-size: 1.8em;
+            letter-spacing: 0.25em;
+            color:$secondary-title-color;
+        }
+
+        .description {
+            font-size: $secondary-text-size;
+            color: $secondary-text-color;
+        }
+
+        .description:before {
+            content: "\00a0\00a0\00a0";
+        }        
     }
+
+    img {
+        margin: 1.5em 1em 2em;
+    }
+}
+
+.gallery-section {
+    @include sectionHeader(white, white);
+    background-color: $blue;
+
+    display: grid;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66%;
+    
 }
