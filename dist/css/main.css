@@ -99,8 +99,8 @@ body {
           justify-content: center;
   -ms-grid-columns: 10em;
       grid-template-columns: 10em;
-  -ms-grid-rows: 10em;
-      grid-template-rows: 10em;
+  -ms-grid-rows: 1em;
+      grid-template-rows: 1em;
   gap: 1.2em;
 }
 
