@@ -1,31 +1,7 @@
 @import './_variables';
+@import './mixins';
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap');
-
-@mixin sectionHeader($title-color, $line-color) {
-    .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin: 1em 0;
-
-        .line {
-            background-color: $line-color;
-            width: 1em;
-            height: 0.14em;
-            margin: 0 4%;
-            flex-grow: 1;
-            flex-shrink: 1;
-        }
-
-        .section-title {
-            font-size: 2.4em;
-            color: $title-color;
-            //flex-grow: 1;
-            text-align: center;
-        }
-    }
-}
 
 body {
     background-color: $background-color;
@@ -46,14 +22,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 
-
-    .logo {
-        font-family: 'Lobster', cursive;
-        padding-top: 0.5em;
-        margin-top: 0;
-        font-size: xx-large;
-        font-weight: 100;
-    }
+    @include logo;
     
     .hero-title {
         font-size: 4em;
@@ -67,18 +36,7 @@ body {
         font-size: 1.7em;
     }
 
-    .button {
-        background-color: $red;
-        border: none;
-        border-radius: $border-radius;
-        color:white;
-        font-family: 'Rokkitt', serif;
-        padding: 0.5em 1.7em;
-        font-weight: 600;
-        font-size: 1.7em;
-        margin-top: 2em;
-        margin-bottom: 4em;
-    }
+    @include button;
 }
 
 #services-section {
@@ -89,23 +47,50 @@ body {
     div {
         display: grid;
         justify-content: center;
+        grid-template-columns: 10em;
+        grid-template-rows: 10em;
+        gap: 1.2em;
 
         figure {
-            background-color: white;
-            border-radius: $border-radius;
-            margin: 0.4em 0em;
-            font-weight: 500;
-            color: $secondary-text-color;
-            font-size: $secondary-text-size;
-            padding: 0.8em;
+            transform: preserve-3d;
+            transition: 1s;
+            margin: 0;
 
-            .service-name {
-                float: left;
-                margin-right: 5em;
+            figure:hover {
+                transform: rotateY(180deg);
             }
-            
-            .service-price {
-                float: right;
+
+            // .card-front, .card-back {
+            //     position: absolute;
+            //     top: 0;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+
+            //     width: 100%;
+            // }
+
+            .card-front {
+                background-color: white;
+                border-radius: $border-radius;
+                font-weight: 500;
+                color: $secondary-text-color;
+                font-size: $secondary-text-size;
+                padding: 1.3em 0.6em;
+                line-height: 0.1em;
+                //width: 10em;
+
+                .service-name {
+                    float: left;
+                }
+                
+                .service-price {
+                    float: right;
+                }
+            }
+
+            .card-back {
+                display: none;
             }
         }
     }
@@ -189,7 +174,7 @@ body {
     }
 }
 
-.gallery-section {
+#gallery-section {
     @include sectionHeader(white, white);
     background-color: $blue;
     margin: 3em 0;
@@ -266,11 +251,14 @@ body {
     }
 }
 
-.contact-section {
+#contact-section {
     @include sectionHeader(black, $decoration-color);
+
+    margin-left: 2em;
 
     ul {
         list-style-type: none;
+        padding-left: 0;
 
         li{
             font-weight: 500;
@@ -290,10 +278,60 @@ body {
     }
 
     iframe {
-        margin-left: 2.7em;
-        width: 80%;
+        width: 90%;
         height: 40vh;
     }
 
+    .text-box-cta {
+        margin: 2em 0;
+
+        h4 {
+            font-size: 1.8em;
+            color:$secondary-title-color;
+            margin:0;
+        }
+
+        input {
+            width: 92%;
+            height: 2em;
+            @include input-style;
+        }
+
+        textarea {
+            width: 92%;
+            height: 8em;
+            @include input-style;
+        }
+    }
+
+    @include button;
+
+    .button {
+        margin-top: 0;
+        margin-bottom: 6em;
+    }
+}
+
+#footer {
+    @include logo;
+    background-color: $secondary-title-color;
+
+    .footer-container {
+        padding: 2.5em 0;
+
+        .logo {
+            color:white;
+            display: inline-block;
+            margin-left: 0.75em;
+        }
     
+        .terms {
+            color: #969696;
+            float:right;
+            margin-right: 1em;
+            margin-top: 1.6em;
+            text-align: center;
+            float: right;
+        }
+    }
 }
