@@ -58,59 +58,6 @@ body {
 
 #services-section {
   margin-bottom: 3em;
-  /*
-    div {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 10em;
-        grid-template-rows: 1em;
-        gap: 1.2em;
-
-        figure {
-            transform: preserve-3d;
-            transition: 1s;
-            margin: 0;
-
-            figure:hover {
-                transform: rotateY(180deg);
-            }
-
-            .card-front, .card-back {
-                //position: relative;
-                // top: 20em;
-                // bottom: 0;
-                // left: 0;
-                // right: 0;
-
-                //width: 10em;
-                //height: 1em;
-            }
-
-            .card-front {
-                background-color: white;
-                border-radius: $border-radius;
-                font-weight: 500;
-                color: $secondary-text-color;
-                font-size: $secondary-text-size;
-                padding: 1.3em 0.6em;
-                line-height: 0.1em;
-                //width: 10em;
-
-                .service-name {
-                    float: left;
-                }
-                
-                .service-price {
-                    float: right;
-                }
-            }
-
-            .card-back {
-                display: none;
-            }
-        }
-    }
-    */
 }
 
 #services-section .section-header {
@@ -145,26 +92,24 @@ body {
 }
 
 #services-section .grid-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   width: 100%;
-  height: 20vh;
+  height: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  gap: 1em;
 }
 
 #services-section .grid-container .card-container {
   width: 20em;
-  height: 1em;
-  -webkit-transition: 1s;
-  transition: 1s;
+  height: 3.7em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 #services-section .grid-container .card-container .card {
@@ -180,6 +125,7 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 #services-section .grid-container .card-container .card .card-front {
@@ -188,33 +134,50 @@ body {
   font-weight: 500;
   color: #525252;
   font-size: 1.6em;
-  padding: 1.3em 0.6em;
-  line-height: 0.1em;
+  line-height: 2.4em;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 #services-section .grid-container .card-container .card .card-front .service-name {
   float: left;
+  margin-left: 0.8em;
 }
 
 #services-section .grid-container .card-container .card .card-front .service-price {
   float: right;
+  margin-right: 0.8em;
 }
 
 #services-section .grid-container .card-container .card .card-back {
-  background-color: #d62424;
+  background-color: white;
   border-radius: 0.3em;
-  font-weight: 500;
+  font-weight: 400;
   color: #525252;
-  font-size: 1.6em;
-  -webkit-transform: translateZ(-1px);
-          transform: translateZ(-1px);
+  font-size: 1.1em;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  text-align: center;
+}
+
+#services-section .grid-container .card-container .card .card-back div {
+  margin: 0 0.3em;
+}
+
+#services-section .grid-container .card-container .card #shorter-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #services-section .grid-container .card-container:hover {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #barbers-section {
