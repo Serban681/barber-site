@@ -70,3 +70,10 @@
         outline: none;
     }
 }
+
+@mixin barber-image($position-x:0, $position-y:0) {
+    background-size: cover;
+
+    background-position-x: $position-x;
+    background-position-y: $position-y;
+}

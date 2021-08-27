@@ -155,11 +155,30 @@ body {
             box-shadow: 10px 10px 5px rgba(black, 0.25);
 
             div {
-                img {
-                    margin: 1em auto 0;
-                    //padding: 0;
+                .barber-image {
+                    margin: 1.5em auto 0;
                     width: 6em;
+                    height: 6em;
                     border-radius: 50%;
+                    display: block;
+                }
+
+                #barber-1 {
+                    background: url("../images/barber_1.jpg");
+
+                    @include barber-image(center, 0.5em);
+                }
+
+                #barber-2 {
+                    background: url("../images/barber_2.jpg");
+
+                    @include barber-image(-1em);
+                }
+
+                #barber-3 {
+                    background: url("../images/barber_3.jpg");
+
+                    @include barber-image(-1.8em);
                 }
 
                 .barber-name {

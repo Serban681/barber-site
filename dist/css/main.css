@@ -243,10 +243,33 @@ body {
           box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
-#barbers-section ul li div img {
-  margin: 1em auto 0;
+#barbers-section ul li div .barber-image {
+  margin: 1.5em auto 0;
   width: 6em;
+  height: 6em;
   border-radius: 50%;
+  display: block;
+}
+
+#barbers-section ul li div #barber-1 {
+  background: url("../images/barber_1.jpg");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 0.5em;
+}
+
+#barbers-section ul li div #barber-2 {
+  background: url("../images/barber_2.jpg");
+  background-size: cover;
+  background-position-x: -1em;
+  background-position-y: 0;
+}
+
+#barbers-section ul li div #barber-3 {
+  background: url("../images/barber_3.jpg");
+  background-size: cover;
+  background-position-x: -1.8em;
+  background-position-y: 0;
 }
 
 #barbers-section ul li div .barber-name {
