@@ -215,35 +215,63 @@ body {
   text-align: center;
 }
 
-#barbers-section ul {
+#barbers-section .grid-container {
   list-style-type: none;
   padding: 0 0 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 2em;
 }
 
-#barbers-section ul li {
-  background-color: white;
-  border-radius: 0.3em;
-  display: -ms-grid;
-  display: grid;
-  text-align: center;
-  margin: 0.2em auto 2.5em;
+#barbers-section .grid-container .card-container {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   width: 20em;
   height: 28em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#barbers-section .grid-container .card-container .card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.3em;
   -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
           box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
-#barbers-section ul li div .barber-image {
+#barbers-section .grid-container .card-container .card figure {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#barbers-section .grid-container .card-container .card .card-front {
+  display: none;
+  -webkit-transform: rotateY(0.5turn);
+          transform: rotateY(0.5turn);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  margin: 0.2em auto 2.5em;
+}
+
+#barbers-section .grid-container .card-container .card .card-front div .barber-image {
   margin: 1.5em auto 0;
   width: 6em;
   height: 6em;
@@ -251,37 +279,50 @@ body {
   display: block;
 }
 
-#barbers-section ul li div #barber-1 {
+#barbers-section .grid-container .card-container .card .card-front div #barber-1 {
   background: url("../images/barber_1.jpg");
   background-size: cover;
   background-position-x: center;
   background-position-y: 0.5em;
 }
 
-#barbers-section ul li div #barber-2 {
+#barbers-section .grid-container .card-container .card .card-front div #barber-2 {
   background: url("../images/barber_2.jpg");
   background-size: cover;
   background-position-x: -1em;
   background-position-y: 0;
 }
 
-#barbers-section ul li div #barber-3 {
+#barbers-section .grid-container .card-container .card .card-front div #barber-3 {
   background: url("../images/barber_3.jpg");
   background-size: cover;
   background-position-x: -1.8em;
   background-position-y: 0;
 }
 
-#barbers-section ul li div .barber-name {
+#barbers-section .grid-container .card-container .card .card-front div .barber-name {
   font-size: 1.6em;
   position: relative;
   color: #343434;
 }
 
-#barbers-section ul li .barber-quote {
+#barbers-section .grid-container .card-container .card .card-front .barber-quote {
   color: #525252;
   font-size: 1.6em;
   margin: 0 1.8em 2em;
+  text-align: center;
+}
+
+#barbers-section .grid-container .card-container .card .card-back div {
+  color: #525252;
+  font-size: 1.6em;
+  margin: 0 1.8em 2em;
+  text-align: center;
+}
+
+#barbers-section .grid-container .card-container:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 #about-us-section {
