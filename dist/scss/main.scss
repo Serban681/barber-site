@@ -125,6 +125,11 @@ body {
             }
         }
 
+        .card-container:checked {
+            margin: 20em;        
+            //transform: rotateY(180deg);
+        }
+
         .card-container:hover {
             //transform: rotateY(180deg);
             transform: scale(1.1);

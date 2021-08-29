@@ -175,6 +175,10 @@ body {
           align-items: center;
 }
 
+#services-section .grid-container .card-container:checked {
+  margin: 20em;
+}
+
 #services-section .grid-container .card-container:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);

@@ -1,6 +1,6 @@
-card = document.getElementById("first-card");
+var card = document.getElementById("first-card");
 
 card.addEventListener("click", ()=>{
     console.log("mau hau");
-    card.style
-})
+    card.style.rotateY = "90deg";
+});
