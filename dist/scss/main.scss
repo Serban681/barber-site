@@ -160,8 +160,6 @@ body {
                 background-color: white;
                 border-radius: $border-radius;
 
-                box-shadow: 10px 10px 5px rgba(black, 0.25);
-
                 figure {
                     position: absolute;
                     top: 0;
@@ -174,13 +172,14 @@ body {
                 }
 
                 .card-front { 
-                    display: none;
-                    transform: rotateY(0.5turn);  
+                    display: none;  
                     backface-visibility:hidden;           
                     display: grid;
                     text-align: center;
 
                     margin: 0.2em auto 2.5em;
+
+                    box-shadow: 10px 10px 5px rgba(black, 0.25);
 
                     div {
                         .barber-image {
@@ -225,11 +224,33 @@ body {
                 }
 
                 .card-back {
-                    // display: grid;
-                    // backface-visibility: hidden;
-                    // justify-content: center;
+                    transform: rotateY(0.5turn);
+                    display: grid;
+                    backface-visibility: hidden;
+                    justify-content: center;
+                    align-items: center;
 
-                    div{
+                    box-shadow: 10px 10px 5px rgba(black, 0.25);
+                    
+                    .head {
+                        display: flex;
+                        justify-content: center;
+
+                        .decoration {
+                            width: 4em;
+                        }
+
+                        .icon {
+                            height: 3em;
+                            margin: 0 2.5em;
+                        }
+
+                        #pole-icon {
+                            height: 3.5em;
+                        }
+                    }
+
+                    .barber-description {
                         color: $secondary-text-color;
                         font-size: $secondary-text-size;
                         margin: 0 1.8em 2em;
@@ -240,8 +261,9 @@ body {
         }
 
         .card-container:hover {
-            //transform: scale(1.05);
-            transform:rotateY(180deg);
+            cursor: pointer;
+            transform: scale(1.05);
+            //transform:rotateY(180deg);
         }
     }                       
 }

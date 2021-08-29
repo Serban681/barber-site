@@ -23,7 +23,7 @@
         </div>
         
         <div class="grid-container">
-            <div class="card-container">
+            <div class="card-container" id="first-card">
                 <div class="card">
                     <figure class="card-front">
                         <div class="service-name">Hair Cut</div>
@@ -125,12 +125,17 @@
                     </figure>
 
                     <figure class="card-back">
-                        <div>Passionate about the art of classic hairdressing, Harrison emphasizes a relaxing experience and a result beyond your expectations.</div>
+                        <div class="head">
+                            <img class="decoration" src="images/decoration.svg">
+                            <img class="icon" src="./images/Scissors.svg">
+                            <img class="decoration" src="images/decoration.svg">
+                        </div>
+                        <div class="barber-description">Passionate about the art of classic hairdressing, Harrison emphasizes a relaxing experience and a result beyond your expectations.</div>
                     </figure>
                 </div>
             </div>
             
-            <!-- <div class="card-container">
+            <div class="card-container">
                 <div class="card">
                     <figure class="card-front">
                         <div>
@@ -142,7 +147,12 @@
                     </figure>
 
                     <figure class="card-back">
-                        <div>If you need a perfect haircut but also a barber to give you advice on the look, exclusive to your style, Stewart is the right man.</div>
+                        <div class="head">
+                            <img class="decoration" src="images/decoration.svg">
+                            <img class="icon" src="./images/Barber_Pool.svg" id="pole-icon">
+                            <img class="decoration" src="images/decoration.svg">
+                        </div>
+                        <div class="barber-description">If you need a perfect haircut but also a barber to give you advice on the look, exclusive to your style, Stewart is the right man.</div>
                     </figure>
                 </div>
             </div>
@@ -159,10 +169,15 @@
                     </figure>
 
                     <figure class="card-back">
-                        <div>Over time, John has developed an artistic sense that blends perfectly with skill, with a result beyond expectations.</div>
+                        <div class="head">
+                            <img class="decoration" src="images/decoration.svg">
+                            <img class="icon" src="./images/Comb.svg">
+                            <img class="decoration" src="images/decoration.svg">
+                        </div>
+                        <div class="barber-description">Over time, John has developed an artistic sense that blends perfectly with skill, with a result beyond expectations.</div>
                     </figure>
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
 
@@ -239,7 +254,7 @@
         </div>
 
         <div class="text-box-cta">
-            <h4>E-mail address::</h4>
+            <h4>E-mail address:</h4>
             <input type="text"></input>
         </div>
 
@@ -257,5 +272,7 @@
             <div class="terms">© Steve’s 2021</div>
         </div>
     </section>
+
+    <script src="action.js"></script>
 </body>
 </html>
