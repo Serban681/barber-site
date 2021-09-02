@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $background-color;
     margin: 0;
@@ -45,16 +49,25 @@ body {
     margin-bottom: 3em;
 
     .grid-container {
+        //margin: 0 1em;
         display: grid;
+        grid-template-columns: 100%;
         width: 100%;
         height: auto;
-        justify-content: center;
-        gap: 1em;
+        justify-items: center;
+        gap: 1em 0;
+
+        grid-template-areas: "srv-1"
+                             "srv-2"
+                             "srv-3"
+                             "srv-4"
+                             "srv-5"
+                             "srv-6";
 
         .card-container {
-            width: 20em;
+            width: 70%;
             height: 3.7em;
-            transition: $scale-time;
+            transition: $scale-time all;
             transform-style: preserve-3d;
             cursor: pointer;
 
@@ -125,16 +138,34 @@ body {
             }
         }
 
-        .card-container:checked {
-            margin: 20em;        
-            //transform: rotateY(180deg);
-        }
-
         .card-container:hover {
-            //transform: rotateY(180deg);
-            transform: scale(1.1);
+            //transform: rotateY(180deg) scale(1.1);
+            cursor: pointer;
         }
 
+        #srv-1 {
+            grid-area: srv-1;
+        }
+
+        #srv-2 {
+            grid-area: srv-2;
+        }
+
+        #srv-3 {
+            grid-area: srv-3;
+        }
+
+        #srv-4 {
+            grid-area: srv-4;
+        }
+
+        #srv-5 {
+            grid-area: srv-5;
+        }
+
+        #srv-6 {
+            grid-area: srv-6;
+        }
     }
 }
 
@@ -144,26 +175,31 @@ body {
     background-color: $red;
 
     .grid-container {
-        list-style-type: none;
         padding: 0 0 5em;
         display: grid;
-        justify-content: center;
-        flex-direction: column;
-        gap: 2em;
+        grid-template-columns: 100%;
+        justify-items: center;
+        gap: 2em 0;
         
 
         .card-container {
-            transition: $scale-time;
+            transition: $scale-time all;
             width: 20em;
             height: 28em;
             transform-style: preserve-3d;
+            border-radius: $border-radius;
+
+            //box-shadow: 10px 10px 5px rgba(black, 0.25);
 
             .card {
                 width: 100%;
                 height: 100%;
 
                 background-color: white;
+
                 border-radius: $border-radius;
+
+                //box-shadow: 10px 10px 5px hsla(0, 0, 0, 0.25);
 
                 figure {
                     position: absolute;
@@ -176,15 +212,15 @@ body {
                     margin: 0;
                 }
 
-                .card-front { 
-                    display: none;  
+                .card-front {  
                     backface-visibility:hidden;           
                     display: grid;
                     text-align: center;
 
                     margin: 0.2em auto 2.5em;
 
-                    box-shadow: 10px 10px 5px rgba(black, 0.25);
+
+                    //box-shadow: 10px 10px 5px hsla(black, 0.25);
 
                     div {
                         .barber-image {
@@ -215,7 +251,6 @@ body {
 
                         .barber-name {
                             font-size: $secondary-text-size;
-                            position:relative;
                             color: $secondary-title-color;
                         }
                     }
@@ -235,7 +270,9 @@ body {
                     justify-content: center;
                     align-items: center;
 
-                    box-shadow: 10px 10px 5px rgba(black, 0.25);
+                    border-radius: $border-radius;
+
+                    //box-shadow: 10px 10px 5px rgba(black, 0.25);
                     
                     .head {
                         display: flex;
@@ -267,8 +304,7 @@ body {
 
         .card-container:hover {
             cursor: pointer;
-            transform: scale(1.05);
-            //transform:rotateY(180deg);
+            //transform: scale(1.05);
         }
     }                       
 }
@@ -328,7 +364,7 @@ body {
 
         .grid-image {
             width: 100%;
-            height: 28em;
+            height: 22.5em;
             background-color: black;
             background-size: cover;
             background-repeat: no-repeat;
@@ -461,6 +497,90 @@ body {
             margin-top: 1.6em;
             text-align: center;
             float: right;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    #services-section{
+        .grid-container {            
+            grid-template-columns: 50% 50%;
+            
+            grid-template-areas: "srv-1 srv-2"
+                                 "srv-3 srv-4"
+                                 "srv-5 srv-6";
+        }
+    }
+
+    #gallery-section {
+        .grid-container {     
+            grid-template-rows: auto;
+            
+            grid-template-areas: 
+            'img-1 img-1 img-1 img-1 img-2 img-2'
+            'img-3 img-3 img-4 img-4 img-4 img-4'
+            'img-5 img-5 img-5 img-6 img-6 img-6'
+            'img-7 img-7 img-7 img-7 img-8 img-8';
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    #hero {
+        height: 32.5em;
+
+        .hero-title {
+            margin-top: 2em;
+        }
+
+        .hero-subtitle {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    #barbers-section {
+        .grid-container {
+            padding: 2em 0 6em;
+
+            grid-template-columns: repeat(3, auto);
+        }
+    }
+
+    #about-us-section {
+        flex-direction: row;
+        
+    }
+
+    #gallery-section {
+        .grid-container {    
+            grid-template-rows: 50% 50%;
+            grid-template-areas: 
+            'img-2 img-1 img-1 img-3 img-5 img-5'
+            'img-6 img-6 img-7 img-4 img-8 img-8';
+
+            .grid-image {
+                height: 15em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1500px) {
+    #hero {
+        height: 35em;
+
+        .hero-title {
+            margin-top: 2em;
+        }
+
+        .hero-subtitle {
+            margin-bottom: 1.5em;
+        }
+    }
+
+    .grid-container {
+        .grid-image {
+            height: 22em;
         }
     }
 }

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #E7E7E7;
   margin: 0;
@@ -94,19 +98,20 @@ body {
 #services-section .grid-container {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
   width: 100%;
   height: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1em;
+  justify-items: center;
+  gap: 1em 0;
+      grid-template-areas: "srv-1" "srv-2" "srv-3" "srv-4" "srv-5" "srv-6";
 }
 
 #services-section .grid-container .card-container {
-  width: 20em;
+  width: 70%;
   height: 3.7em;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   cursor: pointer;
@@ -175,13 +180,44 @@ body {
           align-items: center;
 }
 
-#services-section .grid-container .card-container:checked {
-  margin: 20em;
+#services-section .grid-container .card-container:hover {
+  cursor: pointer;
 }
 
-#services-section .grid-container .card-container:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+#services-section .grid-container #srv-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: srv-1;
+}
+
+#services-section .grid-container #srv-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: srv-2;
+}
+
+#services-section .grid-container #srv-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: srv-3;
+}
+
+#services-section .grid-container #srv-4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: srv-4;
+}
+
+#services-section .grid-container #srv-5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: srv-5;
+}
+
+#services-section .grid-container #srv-6 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: srv-6;
 }
 
 #barbers-section {
@@ -220,27 +256,23 @@ body {
 }
 
 #barbers-section .grid-container {
-  list-style-type: none;
   padding: 0 0 5em;
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 2em;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  justify-items: center;
+  gap: 2em 0;
 }
 
 #barbers-section .grid-container .card-container {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   width: 20em;
   height: 28em;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  border-radius: 0.3em;
 }
 
 #barbers-section .grid-container .card-container .card {
@@ -262,15 +294,12 @@ body {
 }
 
 #barbers-section .grid-container .card-container .card .card-front {
-  display: none;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: -ms-grid;
   display: grid;
   text-align: center;
   margin: 0.2em auto 2.5em;
-  -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
-          box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
 #barbers-section .grid-container .card-container .card .card-front div .barber-image {
@@ -304,7 +333,6 @@ body {
 
 #barbers-section .grid-container .card-container .card .card-front div .barber-name {
   font-size: 1.6em;
-  position: relative;
   color: #343434;
 }
 
@@ -328,8 +356,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
-          box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3em;
 }
 
 #barbers-section .grid-container .card-container .card .card-back .head {
@@ -363,8 +390,6 @@ body {
 
 #barbers-section .grid-container .card-container:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 #about-us-section {
@@ -482,7 +507,7 @@ body {
 
 #gallery-section .grid-container .grid-image {
   width: 100%;
-  height: 28em;
+  height: 22.5em;
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -721,5 +746,64 @@ body {
   margin-top: 1.6em;
   text-align: center;
   float: right;
+}
+
+@media (min-width: 700px) {
+  #services-section .grid-container {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "srv-1 srv-2" "srv-3 srv-4" "srv-5 srv-6";
+  }
+  #gallery-section .grid-container {
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'img-1 img-1 img-1 img-1 img-2 img-2' 'img-3 img-3 img-4 img-4 img-4 img-4' 'img-5 img-5 img-5 img-6 img-6 img-6' 'img-7 img-7 img-7 img-7 img-8 img-8';
+  }
+}
+
+@media (min-width: 1000px) {
+  #hero {
+    height: 32.5em;
+  }
+  #hero .hero-title {
+    margin-top: 2em;
+  }
+  #hero .hero-subtitle {
+    margin-bottom: 0.5em;
+  }
+  #barbers-section .grid-container {
+    padding: 2em 0 6em;
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+  }
+  #about-us-section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #gallery-section .grid-container {
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 'img-2 img-1 img-1 img-3 img-5 img-5' 'img-6 img-6 img-7 img-4 img-8 img-8';
+  }
+  #gallery-section .grid-container .grid-image {
+    height: 15em;
+  }
+}
+
+@media (min-width: 1500px) {
+  #hero {
+    height: 35em;
+  }
+  #hero .hero-title {
+    margin-top: 2em;
+  }
+  #hero .hero-subtitle {
+    margin-bottom: 1.5em;
+  }
+  .grid-container .grid-image {
+    height: 22em;
+  }
 }
 /*# sourceMappingURL=main.css.map */
