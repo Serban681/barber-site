@@ -392,17 +392,6 @@ body {
   cursor: pointer;
 }
 
-#about-us-section {
-  margin-left: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 #about-us-section .section-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -434,23 +423,36 @@ body {
   text-align: center;
 }
 
-#about-us-section .about-us-description h4 {
+#about-us-section .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 2em;
+}
+
+#about-us-section .flex-container .about-us-description h4 {
   font-size: 1.8em;
   letter-spacing: 0.25em;
   color: #343434;
+  margin-left: 0.8em;
 }
 
-#about-us-section .about-us-description .description {
+#about-us-section .flex-container .about-us-description .description {
   font-size: 1.6em;
   color: #525252;
 }
 
-#about-us-section .about-us-description .description:before {
+#about-us-section .flex-container .about-us-description .description:before {
   content: "\00a0\00a0\00a0";
 }
 
-#about-us-section img {
-  margin: 1.5em 1em 2em;
+#about-us-section .flex-container img {
+  margin-left: 2em;
+  margin-top: 1em;
 }
 
 #gallery-section {
@@ -776,11 +778,14 @@ body {
     -ms-grid-columns: (auto)[3];
         grid-template-columns: repeat(3, auto);
   }
-  #about-us-section {
+  #about-us-section .flex-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  #about-us-section .flex-container .shop-image {
+    width: 50%;
   }
   #gallery-section .grid-container {
     -ms-grid-rows: 50% 50%;
@@ -802,8 +807,14 @@ body {
   #hero .hero-subtitle {
     margin-bottom: 1.5em;
   }
-  .grid-container .grid-image {
-    height: 22em;
+  #about-us-section .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #about-us-section .flex-container .shop-image {
+    width: 40%;
   }
 }
 /*# sourceMappingURL=main.css.map */
