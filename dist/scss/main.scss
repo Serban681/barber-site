@@ -46,10 +46,10 @@ body {
 #services-section {
     @include sectionHeader(black, $decoration-color);
 
-    margin-bottom: 3em;
+    margin-bottom: 5em;
 
     .grid-container {
-        //margin: 0 1em;
+        margin-top: 3em;
         display: grid;
         grid-template-columns: 100%;
         width: 100%;
@@ -58,14 +58,20 @@ body {
         gap: 1em 0;
 
         grid-template-areas: "srv-1"
-                             "srv-2"
-                             "srv-3"
-                             "srv-4"
-                             "srv-5"
-                             "srv-6";
+                                "srv-2"
+                                "srv-3"
+                                "srv-4"
+                                "srv-5"
+                                "srv-6";
 
+        .icons-container {
+            display: none;
+
+            grid-area: icons;
+        }
+        
         .card-container {
-            width: 70%;
+            width: 20em;
             height: 3.7em;
             transition: $scale-time all;
             transform-style: preserve-3d;
@@ -424,33 +430,40 @@ body {
 #contact-section {
     @include sectionHeader(black, $decoration-color);
 
-    margin-left: 2em;
+    margin: 0 2em;
 
-    ul {
-        list-style-type: none;
-        padding-left: 0;
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
 
-        li{
-            font-weight: 500;
-            margin-bottom: 3.2em;
-
-            h4{
-                font-size: 1.8em;
-                color:$secondary-title-color;
-                margin:0;
-            }
-            div{
-                font-size: $secondary-text-size;
-                color:$secondary-text-color;
-                margin-top: 0;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+    
+            li{
+                font-weight: 500;
+                margin-bottom: 3.2em;
+    
+                h4{
+                    font-size: 1.8em;
+                    color:$secondary-title-color;
+                    margin:0;
+                }
+                div{
+                    font-size: $secondary-text-size;
+                    color:$secondary-text-color;
+                    margin-top: 0;
+                }
             }
         }
+    
+        iframe {
+            width: 100%;
+            height: 40vh;
+        }
     }
-
-    iframe {
-        width: 90%;
-        height: 40vh;
-    }
+    
 
     .text-box-cta {
         margin: 2em 0;
@@ -462,13 +475,13 @@ body {
         }
 
         input {
-            width: 92%;
+            width: 100%;
             height: 2em;
             @include input-style;
         }
 
         textarea {
-            width: 92%;
+            width: 100%;
             height: 8em;
             @include input-style;
         }
@@ -531,6 +544,25 @@ body {
 }
 
 @media (min-width: 1000px) {
+    #contact-section {
+        .grid-container {
+            margin-top: 3em;
+
+            flex-direction: row;
+
+            #location-map {
+                width: 27em;
+                height: 27em;
+            }
+        }
+
+        .text-box-cta {
+            
+        }
+    }
+}
+
+@media (min-width: 1200px) {
     #hero {
         height: 32.5em;
 
@@ -540,6 +572,41 @@ body {
 
         .hero-subtitle {
             margin-bottom: 0.5em;
+        }
+    }
+
+    #services-section {
+        .grid-container {            
+            grid-template-columns: 45% 10% 45%;
+            
+            
+        // grid-template-areas:"srv-1"
+        //                     "srv-icon-1"
+
+            grid-template-areas: "srv-1 icons srv-2"
+                                 "srv-3 icons srv-4"
+                                 "srv-5 icons srv-6";
+            
+            .icons-container {
+                display: flex;
+                flex-direction: column;
+
+                #srv-icon-1 {
+                    grid-area: icon-1;
+                    transform: translateX(-5em) translateY(-1em) scale(1.1);
+                }
+    
+                #srv-icon-2 {
+                    grid-area: icon-2;
+                    //margin-left: 30em;
+                    transform: translateX(5em) scale(1.4);
+                }
+    
+                #srv-icon-3 {
+                    grid-area: icon-3;
+                    transform: translateX(-5em) scale(1.2);
+                }
+            }
         }
     }
 
@@ -595,6 +662,15 @@ body {
             .shop-image {
                 width: 40%;
             }
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: auto;
+
+            grid-template-areas:"name email"
+                                "message message";
         }
     }
 }

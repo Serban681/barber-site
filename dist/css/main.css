@@ -61,7 +61,7 @@ body {
 }
 
 #services-section {
-  margin-bottom: 3em;
+  margin-bottom: 5em;
 }
 
 #services-section .section-header {
@@ -96,6 +96,7 @@ body {
 }
 
 #services-section .grid-container {
+  margin-top: 3em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
@@ -107,8 +108,13 @@ body {
       grid-template-areas: "srv-1" "srv-2" "srv-3" "srv-4" "srv-5" "srv-6";
 }
 
+#services-section .grid-container .icons-container {
+  display: none;
+  grid-area: icons;
+}
+
 #services-section .grid-container .card-container {
-  width: 70%;
+  width: 20em;
   height: 3.7em;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
@@ -582,7 +588,7 @@ body {
 }
 
 #contact-section {
-  margin-left: 2em;
+  margin: 0 2em;
 }
 
 #contact-section .section-header {
@@ -616,30 +622,43 @@ body {
   text-align: center;
 }
 
-#contact-section ul {
+#contact-section .grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#contact-section .grid-container ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-#contact-section ul li {
+#contact-section .grid-container ul li {
   font-weight: 500;
   margin-bottom: 3.2em;
 }
 
-#contact-section ul li h4 {
+#contact-section .grid-container ul li h4 {
   font-size: 1.8em;
   color: #343434;
   margin: 0;
 }
 
-#contact-section ul li div {
+#contact-section .grid-container ul li div {
   font-size: 1.6em;
   color: #525252;
   margin-top: 0;
 }
 
-#contact-section iframe {
-  width: 90%;
+#contact-section .grid-container iframe {
+  width: 100%;
   height: 40vh;
 }
 
@@ -654,7 +673,7 @@ body {
 }
 
 #contact-section .text-box-cta input {
-  width: 92%;
+  width: 100%;
   height: 2em;
   border: 0.15em solid transparent;
   border-radius: 0.3em;
@@ -674,7 +693,7 @@ body {
 }
 
 #contact-section .text-box-cta textarea {
-  width: 92%;
+  width: 100%;
   height: 8em;
   border: 0.15em solid transparent;
   border-radius: 0.3em;
@@ -764,6 +783,20 @@ body {
 }
 
 @media (min-width: 1000px) {
+  #contact-section .grid-container {
+    margin-top: 3em;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #contact-section .grid-container #location-map {
+    width: 27em;
+    height: 27em;
+  }
+}
+
+@media (min-width: 1200px) {
   #hero {
     height: 32.5em;
   }
@@ -772,6 +805,35 @@ body {
   }
   #hero .hero-subtitle {
     margin-bottom: 0.5em;
+  }
+  #services-section .grid-container {
+    -ms-grid-columns: 45% 10% 45%;
+        grid-template-columns: 45% 10% 45%;
+        grid-template-areas: "srv-1 icons srv-2" "srv-3 icons srv-4" "srv-5 icons srv-6";
+  }
+  #services-section .grid-container .icons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #services-section .grid-container .icons-container #srv-icon-1 {
+    grid-area: icon-1;
+    -webkit-transform: translateX(-5em) translateY(-1em) scale(1.1);
+            transform: translateX(-5em) translateY(-1em) scale(1.1);
+  }
+  #services-section .grid-container .icons-container #srv-icon-2 {
+    grid-area: icon-2;
+    -webkit-transform: translateX(5em) scale(1.4);
+            transform: translateX(5em) scale(1.4);
+  }
+  #services-section .grid-container .icons-container #srv-icon-3 {
+    grid-area: icon-3;
+    -webkit-transform: translateX(-5em) scale(1.2);
+            transform: translateX(-5em) scale(1.2);
   }
   #barbers-section .grid-container {
     padding: 2em 0 6em;
@@ -815,6 +877,15 @@ body {
   }
   #about-us-section .flex-container .shop-image {
     width: 40%;
+  }
+  #about-us-section .input-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "name email" "message message";
   }
 }
 /*# sourceMappingURL=main.css.map */
