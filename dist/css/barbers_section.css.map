@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/barbers_section.scss"
+    ],
+    "names": [],
+    "file": "barbers_section.css"
+}

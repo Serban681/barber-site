@@ -1,0 +1,78 @@
+@mixin gallery-section {
+    #gallery-section {
+        @include sectionHeader(white, white);
+        background-color: $blue;
+        margin: 3em 0;
+    
+        .grid-container {
+            margin: 2em 4em;
+            padding-bottom: 7em;
+    
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15% 15%;
+            grid-template-rows: auto;
+            grid-template-areas: 'img-1 img-1 img-1 img-1 img-1 img-1'
+                                 'img-2 img-2 img-2 img-2 img-2 img-2'
+                                 'img-3 img-3 img-3 img-3 img-3 img-3'
+                                 'img-4 img-4 img-4 img-4 img-4 img-4'
+                                 'img-5 img-5 img-5 img-5 img-5 img-5'
+                                 'img-6 img-6 img-6 img-6 img-6 img-6'
+                                 'img-7 img-7 img-7 img-7 img-7 img-7'
+                                 'img-8 img-8 img-8 img-8 img-8 img-8';
+            gap: 1em;
+            justify-content: center;
+    
+            .grid-image {
+                width: 100%;
+                height: 22.5em;
+                background-color: black;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+    
+            #image-1 {
+                //height: 30em;
+                grid-area: img-1;
+                background-image:url("../images/gallery_1.jpg");
+                background-position: center;
+            }
+    
+            #image-2 {
+                grid-area: img-2;
+                background-image:url("../images/gallery_2.jpg");
+            }
+    
+            #image-3 {
+                grid-area: img-3;
+                background-image:url("../images/gallery_3.jpg");
+            }
+    
+            #image-4 {
+                //height: 30em;
+                grid-area: img-4;
+                background-image:url("../images/gallery_4.jpg");
+                background-position: center;
+            }
+    
+            #image-5 {
+                grid-area: img-5;
+                background-image:url("../images/gallery_5.jpg");
+            }
+    
+            #image-6 {
+                grid-area: img-6;
+                background-image:url("../images/gallery_6.jpg");
+            }
+    
+            #image-7 {
+                grid-area: img-7;
+                background-image:url("../images/gallery_7.jpg");
+            }
+    
+            #image-8 {
+                grid-area: img-8;
+                background-image:url("../images/gallery_8.jpg");
+            }
+        }
+    }
+}

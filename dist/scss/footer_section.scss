@@ -1,0 +1,25 @@
+@mixin footer-section {
+    #footer {
+        @include logo;
+        background-color: $secondary-title-color;
+    
+        .footer-container {
+            padding: 2.5em 0;
+    
+            .logo {
+                color:white;
+                display: inline-block;
+                margin-left: 0.75em;
+            }
+        
+            .terms {
+                color: #969696;
+                float:right;
+                margin-right: 1em;
+                margin-top: 1.6em;
+                text-align: center;
+                float: right;
+            }
+        }
+    }
+}

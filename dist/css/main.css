@@ -10,6 +10,56 @@ body {
   font-family: 'Rokkitt', serif;
 }
 
+#hero {
+  color: white;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../images/hero-bg.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero .logo {
+  font-family: 'Lobster', cursive;
+  padding-top: 0.5em;
+  margin-top: 0;
+  font-size: xx-large;
+  font-weight: 100;
+}
+
+#hero .hero-title {
+  font-size: 4em;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+#hero .hero-subtitle {
+  font-weight: 400;
+  margin: 0em 2em;
+  font-size: 1.7em;
+}
+
+#hero .button {
+  background-color: #A35353;
+  border: none;
+  border-radius: 0.3em;
+  color: white;
+  font-family: 'Rokkitt', serif;
+  padding: 0.5em 1.7em;
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#hero .button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 #services-section {
   margin-bottom: 5em;
 }
@@ -46,7 +96,7 @@ body {
 }
 
 #services-section .grid-container {
-  margin-top: 3em;
+  margin-top: 1.5em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
@@ -54,7 +104,7 @@ body {
   width: 100%;
   height: auto;
   justify-items: center;
-  gap: 1em 0;
+  gap: 1.2em 0;
       grid-template-areas: "srv-1" "srv-2" "srv-3" "srv-4" "srv-5" "srv-6";
 }
 
@@ -684,7 +734,7 @@ body {
 }
 
 #contact-section .button {
-  margin-top: 0;
+  margin-top: 1.5em;
   margin-bottom: 6em;
 }
 

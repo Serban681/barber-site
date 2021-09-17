@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/contact_section.scss",
+        "../scss/_mixins.scss"
+    ],
+    "names": [],
+    "file": "contact_section.css"
+}

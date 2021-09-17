@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/about-us-section.scss"
+    ],
+    "names": [],
+    "file": "about-us-section.css"
+}
