@@ -1,5 +1,5 @@
 # Barber Shop Website 
-This is a brochure website which presents to the users typical stuff like services, pricing, or the staff.
+This is a brochure website which presents users typical stuff like services, pricing, or the staff.
 
 ## Live Demo
 ----
