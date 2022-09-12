@@ -8,14 +8,14 @@
         .line {
             background-color: $line-color;
             width: 1em;
-            height: 0.14em;
+            height: 0.15em;
             margin: 0 4%;
             flex-grow: 1;
             flex-shrink: 1;
         }
 
         .section-title {
-            font-size: 2.4em;
+            font-size: 3em;
             color: $title-color;
             //flex-grow: 1;
             text-align: center;
@@ -32,10 +32,13 @@
         font-family: 'Rokkitt', serif;
         padding: 0.5em 1.7em;
         font-weight: 600;
-        font-size: 1.7em;
+        font-size: $secondary-text-size;
         margin-top: 2em;
         margin-bottom: 4em;
         transition: 0.2s;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -o-transition: 0.2s;
         cursor: pointer;
 
         &:hover {

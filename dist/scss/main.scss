@@ -2,13 +2,6 @@
 @import './mixins';
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rokkitt:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap');
-@import './hero.scss';
-@import './services_section.scss';
-@import './barbers_section.scss';
-@import './about_us_section.scss';
-@import './gallery_section.scss';
-@import './contact_section.scss';
-@import './footer_section.scss';
 
 html {
     scroll-behavior: smooth;
@@ -20,21 +13,537 @@ body {
     font-family: 'Rokkitt', serif;
 }
 
-@include hero;
+#hero {
 
-@include services-section;
+    color: white;
+    text-align: center;
+    background: url($hero-bg-path);
 
-@include barbers-section;
+    //background-position: center;
+    //background-position-y: 20em;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-@include about-us-section;
+    @include logo;
+    
+    .hero-title {
+        font-size: 4em;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
 
-@include gallery-section;
+    .hero-subtitle {
+        font-weight: 400;
+        margin: 0em 2em;
+        font-size: 1.7em;
+    }
 
-@include contact-section;
+    @include button;
+}
 
-@include footer-section;
+#services-section {
+    @include sectionHeader(black, $decoration-color);
 
-@media (min-width: 700px) {
+    margin-bottom: 5em;
+
+    .grid-container {
+        margin-top: 1.5em;
+        display: grid;
+        grid-template-columns: 100%;
+        width: 100%;
+        height: auto;
+        justify-items: center;
+        gap: 1.6em 0;
+
+        grid-template-areas:    "srv-1"
+                                "srv-2"
+                                "srv-3"
+                                "srv-4"
+                                "srv-5"
+                                "srv-6";
+
+        .icons-container {
+            display: none;
+
+            grid-area: icons;
+        }
+        
+        .card-container {
+            width: 25em;
+            height: 4.5em;
+            transition: $scale-time all;
+            transform-style: preserve-3d;
+            cursor: pointer;
+
+            .card{
+                width: 100%;
+                height: 100%;
+
+                transform-style: preserve-3d;
+
+                figure {
+                    position: absolute;
+
+                    top:0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    width: 100%;
+                    height: 100%;
+
+                    margin: 0;
+                }
+
+                .card-front {
+                    background-color: white;
+                    border-radius: $border-radius;
+                    font-weight: 500;
+                    color: $secondary-text-color;
+                    font-size: 1.8em;
+                    line-height: 2.6em;
+                    backface-visibility:hidden;
+                    -o-backface-visibility:hidden;
+                    -moz-backface-visibility:hidden;
+                    -webkit-backface-visibility:hidden;
+
+                    .service-name {
+                        float: left;
+                        margin-left: 0.8em;
+                    }
+
+                    .service-price {
+                        float: right;
+                        margin-right: 0.8em;
+                    }
+                }
+
+                // .margin {
+                //     background-color: gray;
+                //     width: 0.2em;
+                //     transform: translateX(1em);
+                //     transform: rotateY(90deg);
+                // }
+
+                .card-back {
+                    background-color: rgb(255, 255, 255);
+                    border-radius: $border-radius;
+                    font-weight: 400;
+                    color: $secondary-text-color;
+                    font-size: 1.3em;
+
+                    transform: rotateY(180deg);
+
+                    backface-visibility:hidden;
+                    
+                    text-align: center;
+                    
+                    div {
+                        margin: 0 0.3em;            
+                    }
+                }
+
+                #shorter-text {
+                    display: flex;
+                    align-items: center;  
+                    //line-height: 3em; 
+                }
+            }
+        }
+
+        .card-container:hover {
+            //transform: rotateY(180deg) scale(1.1);
+            cursor: pointer;
+        }
+
+        #srv-1 {
+            grid-area: srv-1;
+        }
+
+        #srv-2 {
+            grid-area: srv-2;
+        }
+
+        #srv-3 {
+            grid-area: srv-3;
+        }
+
+        #srv-4 {
+            grid-area: srv-4;
+        }
+
+        #srv-5 {
+            grid-area: srv-5;
+        }
+
+        #srv-6 {
+            grid-area: srv-6;
+        }
+    }
+}
+
+#barbers-section {
+    @include sectionHeader(white, white);
+
+    background-color: $red;
+
+    .grid-container {
+        padding: 0 0 5em;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        gap: 3em 0;
+        
+
+        .card-container {
+            transition: $scale-time all;
+            width: 22em;
+            height: 32em;
+            transform-style: preserve-3d;
+            border-radius: $border-radius;
+
+            //box-shadow: 10px 10px 5px rgba(black, 0.25);
+
+            .card {
+                width: 100%;
+                height: 100%;
+
+                background-color: white;
+                transform-style: preserve-3d;
+                border-radius: $border-radius;
+
+                backface-visibility: hidden;
+                -o-backface-visibility:hidden;
+                -moz-backface-visibility:hidden;
+                -webkit-backface-visibility:hidden;
+
+                //box-shadow: 10px 10px 5px hsla(0, 0, 0, 0.25);
+
+                figure {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                }
+
+                .card-front {     
+                    display: grid;
+                    text-align: center;
+
+                    margin: 0.2em auto 2.5em;
+                    backface-visibility: hidden;
+                    -o-backface-visibility:hidden;
+                    -moz-backface-visibility:hidden;
+                    -webkit-backface-visibility:hidden;
+
+                    //box-shadow: 10px 10px 5px hsla(black, 0.25);
+
+                    div {
+                        .barber-image {
+                            margin: 1.5em auto 0;
+                            width: 7em;
+                            height: 7em;
+                            border-radius: 50%;
+                            display: block;
+                        }
+
+                        #barber-1 {
+                            background: url("../images/barber_1.jpg");
+
+                            @include barber-image(center, 0.5em);
+                        }
+
+                        #barber-2 {
+                            background: url("../images/barber_2.jpg");
+
+                            @include barber-image(-1em);
+                        }
+
+                        #barber-3 {
+                            background: url("../images/barber_3.jpg");
+
+                            @include barber-image(-2.2em);
+                        }
+
+                        .barber-name {
+                            font-size: $secondary-title-size;
+                            color: $secondary-title-color;
+                        }
+                    }
+
+                    .barber-quote {
+                        color: $secondary-text-color;
+                        font-size: $secondary-text-size;
+                        margin: 0 1.8em 2em;
+                        text-align: center;
+                    }
+                }
+
+                .card-back {
+                    background-color: white;
+                    transform: rotateY(0.5turn);
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+
+                    backface-visibility: hidden;
+                    -o-backface-visibility:hidden;
+                    -moz-backface-visibility:hidden;
+                    -webkit-backface-visibility:hidden;
+
+                    border-radius: $border-radius;
+
+                    //box-shadow: 10px 10px 5px rgba(black, 0.25);
+                    
+                    .head {
+                        display: flex;
+                        justify-content: center;
+
+                        .decoration {
+                            width: 4em;
+                            transform: rotateZ(-9deg);
+                        }
+
+                        .icon {
+                            height: 3.2em;
+                            margin: 0 2.5em;
+                        }
+
+                        #pole-icon {
+                            height: 3.5em;
+                        }
+                    }
+
+                    .barber-description {
+                        color: $secondary-text-color;
+                        font-size: $secondary-text-size;
+                        margin: 0 1.8em 2em;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .card-container:hover {
+            cursor: pointer;
+            //transform: scale(1.05);
+        }
+    }                       
+}
+
+#about-us-section {
+
+    @include sectionHeader(black, $decoration-color);
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0 2em 5em;
+
+        .about-us-description {
+            margin-bottom: 0.5em;
+            h4 {
+                font-size: $secondary-title-size;
+                letter-spacing: 0.25em;
+                color:$secondary-title-color;
+                margin-left: 0.8em;
+                margin-bottom: 0.9em;
+            }
+    
+            .description {
+                font-size: $secondary-text-size;
+                color: $secondary-text-color;
+    
+                &:before {
+                    content: "\00a0\00a0\00a0";
+                }    
+            }    
+        }
+
+        img {
+            //margin-left: 2em;
+            margin-top: 1em;
+        }
+    }
+}
+
+#gallery-section {
+    @include sectionHeader(white, white);
+    background-color: $blue;
+    margin: 3em 0;
+
+    .grid-container {
+        margin: 2em 4em;
+        padding-bottom: 7em;
+
+        display: grid;
+        grid-template-columns: 15% 15% 15% 15% 15% 15%;
+        grid-template-rows: auto;
+        grid-template-areas: 'img-1 img-1 img-1 img-1 img-1 img-1'
+                                'img-2 img-2 img-2 img-2 img-2 img-2'
+                                'img-3 img-3 img-3 img-3 img-3 img-3'
+                                'img-4 img-4 img-4 img-4 img-4 img-4'
+                                'img-5 img-5 img-5 img-5 img-5 img-5'
+                                'img-6 img-6 img-6 img-6 img-6 img-6'
+                                'img-7 img-7 img-7 img-7 img-7 img-7'
+                                'img-8 img-8 img-8 img-8 img-8 img-8';
+        gap: 1em;
+        justify-content: center;
+
+        .grid-image {
+            width: 100%;
+            height: 22.5em;
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #image-1 {
+            //height: 30em;
+            grid-area: img-1;
+            background-image:url("../images/gallery_1.jpg");
+            background-position: center;
+        }
+
+        #image-2 {
+            grid-area: img-2;
+            background-image:url("../images/gallery_2.jpg");
+        }
+
+        #image-3 {
+            grid-area: img-3;
+            background-image:url("../images/gallery_3.jpg");
+        }
+
+        #image-4 {
+            //height: 30em;
+            grid-area: img-4;
+            background-image:url("../images/gallery_4.jpg");
+            background-position: center;
+        }
+
+        #image-5 {
+            grid-area: img-5;
+            background-image:url("../images/gallery_5.jpg");
+        }
+
+        #image-6 {
+            grid-area: img-6;
+            background-image:url("../images/gallery_6.jpg");
+        }
+
+        #image-7 {
+            grid-area: img-7;
+            background-image:url("../images/gallery_7.jpg");
+        }
+
+        #image-8 {
+            grid-area: img-8;
+            background-image:url("../images/gallery_8.jpg");
+        }
+    }
+}
+
+@import './_mixins.scss';
+
+#contact-section {
+    @include sectionHeader(black, $decoration-color);
+
+    margin: 0 2em;
+
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+    
+            li{
+                font-weight: 500;
+                margin-bottom: 3.2em;
+    
+                h4{
+                    font-size: 1.8em;
+                    color:$secondary-title-color;
+                    margin:0;
+                }
+                div{
+                    font-size: $secondary-text-size;
+                    color:$secondary-text-color;
+                    margin-top: 0;
+                }
+            }
+        }
+    
+        iframe {
+            width: 100%;
+            height: 40vh;
+        }
+    }
+    
+
+    .text-box-cta {
+        margin: 2em 0;
+
+        h4 {
+            font-size: 1.8em;
+            color:$secondary-title-color;
+            margin:0;
+        }
+
+        input {
+            width: 100%;
+            height: 2em;
+            @include input-style;
+        }
+
+        textarea {
+            width: 100%;
+            height: 8em;
+            @include input-style;
+        }
+    }
+
+    @include button;
+
+    .button {
+        margin-top: 1.5em;
+        margin-bottom: 6em;
+    }
+}
+
+#footer {
+    @include logo;
+    background-color: $secondary-title-color;
+
+    .footer-container {
+        padding: 2.5em 0;
+
+        .logo {
+            color:white;
+            display: inline-block;
+            margin-left: 0.75em;
+        }
+    
+        .terms {
+            color: #969696;
+            float:right;
+            margin-right: 1em;
+            margin-top: 1.6em;
+            text-align: center;
+            float: right;
+        }
+    }
+}
+
+@media (min-width: 900px) {
     #services-section{
         .grid-container {            
             grid-template-columns: 50% 50%;
@@ -58,28 +567,57 @@ body {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
     #contact-section {
+        display: grid;
+
         .grid-container {
+            margin-left: auto;
+            margin-right: auto;
             margin-top: 3em;
 
             flex-direction: row;
 
+            #contact-details {
+                margin-right: 5em;
+            }
+
             #location-map {
-                width: 27em;
+                width: 52em;
                 height: 27em;
             }
         }
 
-        // .text-box-cta {
-            
-        // }
+        .input-grid {
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            grid-template-columns: 35em minmax(1em, 45em);
+            grid-template-rows: auto;
+    
+            grid-template-areas:"name email"
+                                "message message";
+    
+            #name-field {
+                grid-area: name;
+                margin-right: 4em;
+            }
+    
+            #email-field {
+                grid-area: email;
+            }
+    
+            #message-field {
+                grid-area: message;
+            }
+        }
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     #hero {
         height: 32.5em;
+        background-position-y: -8em;
 
         .hero-title {
             margin-top: 2em;
@@ -91,12 +629,9 @@ body {
     }
 
     #services-section {
-        .grid-container {            
-            grid-template-columns: 45% 10% 45%;
-            
-            
-        // grid-template-areas:"srv-1"
-        //                     "srv-icon-1"
+        .grid-container {          
+            grid-template-columns: 45em minmax(5em, 20em) 45em;
+            justify-content: center;
 
             grid-template-areas: "srv-1 icons srv-2"
                                  "srv-3 icons srv-4"
@@ -128,23 +663,56 @@ body {
     #barbers-section {
         .grid-container {
             padding: 2em 0 6em;
-
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(3, minmax(10em, 34em));
+            justify-content: center;
         }
     }
 
     #about-us-section {
         .flex-container {
             flex-direction: row;
-        
-            .shop-image {
-                width: 50%;
+            justify-content: center;
+            
+            .about-us-description {
+                width: 35em;
+                margin-right: 6em;
             }
+
+            .shop-image {
+                width: 45em;
+            }
+
+            margin-top: 3em;
+            margin-bottom: 7em;
+        }
+    }
+}
+
+@media (min-width: 1500px) {
+    #hero {
+        height: 43em;
+        background-position-y: -13em;
+
+        .logo {
+            font-size: 2.5em;
+        }
+
+        .hero-title {
+            margin-top: 2em;
+            font-size: 5em;
+        }
+
+        .hero-subtitle {
+            font-size: 2em;
+            margin-bottom: 1.5em;
         }
     }
 
     #gallery-section {
-        .grid-container {    
+        .grid-container {
+            width: 90em;   
+            margin-left: auto;
+            margin-right: auto;
             grid-template-rows: 50% 50%;
             grid-template-areas: 
             'img-2 img-1 img-1 img-3 img-5 img-5'
@@ -155,37 +723,18 @@ body {
             }
         }
     }
-}
 
-@media (min-width: 1500px) {
-    #hero {
-        height: 35em;
-
-        .hero-title {
-            margin-top: 2em;
-        }
-
-        .hero-subtitle {
-            margin-bottom: 1.5em;
-        }
-    }
-
-    #about-us-section {
-        .flex-container {
-            flex-direction: row;
-        
-            .shop-image {
-                width: 40%;
+    #footer {
+        .footer-container {
+            .logo {
+                font-size: 2.5em;
+                margin-left: 1.5em;
             }
-        }
 
-        .input-grid {
-            display: grid;
-            grid-template-columns: 40% 60%;
-            grid-template-rows: auto;
-
-            grid-template-areas:"name email"
-                                "message message";
+            .terms {
+                font-size: 1.4em;
+                margin-right: 3em;
+            }
         }
     }
 }

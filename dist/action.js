@@ -22,6 +22,7 @@ function Card(turned, instance, maxScale, boxShadow)
 
     function updateTransform(instance) {
         instance.style.transform = `rotateY(${rotY}deg) scale(${scale})`;
+        //instance.style.moz
     }
 
     function turnToFront(instance) {

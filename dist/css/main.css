@@ -13,8 +13,7 @@ body {
 #hero {
   color: white;
   text-align: center;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../images/hero-bg.jpg");
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/hero-bg.jpg");
+  background: url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -47,11 +46,13 @@ body {
   font-family: 'Rokkitt', serif;
   padding: 0.5em 1.7em;
   font-weight: 600;
-  font-size: 1.7em;
+  font-size: 1.8em;
   margin-top: 2em;
   margin-bottom: 4em;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
   cursor: pointer;
 }
 
@@ -80,7 +81,7 @@ body {
 #services-section .section-header .line {
   background-color: #C4C4C4;
   width: 1em;
-  height: 0.14em;
+  height: 0.15em;
   margin: 0 4%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -90,7 +91,7 @@ body {
 }
 
 #services-section .section-header .section-title {
-  font-size: 2.4em;
+  font-size: 3em;
   color: black;
   text-align: center;
 }
@@ -104,7 +105,7 @@ body {
   width: 100%;
   height: auto;
   justify-items: center;
-  gap: 1.2em 0;
+  gap: 1.6em 0;
       grid-template-areas: "srv-1" "srv-2" "srv-3" "srv-4" "srv-5" "srv-6";
 }
 
@@ -114,8 +115,8 @@ body {
 }
 
 #services-section .grid-container .card-container {
-  width: 20em;
-  height: 3.7em;
+  width: 25em;
+  height: 4.5em;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   -webkit-transform-style: preserve-3d;
@@ -126,6 +127,8 @@ body {
 #services-section .grid-container .card-container .card {
   width: 100%;
   height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 #services-section .grid-container .card-container .card figure {
@@ -144,10 +147,12 @@ body {
   border-radius: 0.3em;
   font-weight: 500;
   color: #525252;
-  font-size: 1.6em;
-  line-height: 2.4em;
+  font-size: 1.8em;
+  line-height: 2.6em;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 #services-section .grid-container .card-container .card .card-front .service-name {
@@ -165,7 +170,7 @@ body {
   border-radius: 0.3em;
   font-weight: 400;
   color: #525252;
-  font-size: 1.1em;
+  font-size: 1.3em;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   -webkit-backface-visibility: hidden;
@@ -246,7 +251,7 @@ body {
 #barbers-section .section-header .line {
   background-color: white;
   width: 1em;
-  height: 0.14em;
+  height: 0.15em;
   margin: 0 4%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -256,7 +261,7 @@ body {
 }
 
 #barbers-section .section-header .section-title {
-  font-size: 2.4em;
+  font-size: 3em;
   color: white;
   text-align: center;
 }
@@ -268,14 +273,14 @@ body {
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   justify-items: center;
-  gap: 2em 0;
+  gap: 3em 0;
 }
 
 #barbers-section .grid-container .card-container {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
-  width: 20em;
-  height: 28em;
+  width: 22em;
+  height: 32em;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   border-radius: 0.3em;
@@ -285,7 +290,13 @@ body {
   width: 100%;
   height: 100%;
   background-color: white;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   border-radius: 0.3em;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 #barbers-section .grid-container .card-container .card figure {
@@ -300,18 +311,20 @@ body {
 }
 
 #barbers-section .grid-container .card-container .card .card-front {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   display: -ms-grid;
   display: grid;
   text-align: center;
   margin: 0.2em auto 2.5em;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 #barbers-section .grid-container .card-container .card .card-front div .barber-image {
   margin: 1.5em auto 0;
-  width: 6em;
-  height: 6em;
+  width: 7em;
+  height: 7em;
   border-radius: 50%;
   display: block;
 }
@@ -333,35 +346,38 @@ body {
 #barbers-section .grid-container .card-container .card .card-front div #barber-3 {
   background: url("../images/barber_3.jpg");
   background-size: cover;
-  background-position-x: -1.8em;
+  background-position-x: -2.2em;
   background-position-y: 0;
 }
 
 #barbers-section .grid-container .card-container .card .card-front div .barber-name {
-  font-size: 1.6em;
+  font-size: 2em;
   color: #343434;
 }
 
 #barbers-section .grid-container .card-container .card .card-front .barber-quote {
   color: #525252;
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin: 0 1.8em 2em;
   text-align: center;
 }
 
 #barbers-section .grid-container .card-container .card .card-back {
+  background-color: white;
   -webkit-transform: rotateY(0.5turn);
           transform: rotateY(0.5turn);
   display: -ms-grid;
   display: grid;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 0.3em;
 }
 
@@ -376,10 +392,12 @@ body {
 
 #barbers-section .grid-container .card-container .card .card-back .head .decoration {
   width: 4em;
+  -webkit-transform: rotateZ(-9deg);
+          transform: rotateZ(-9deg);
 }
 
 #barbers-section .grid-container .card-container .card .card-back .head .icon {
-  height: 3em;
+  height: 3.2em;
   margin: 0 2.5em;
 }
 
@@ -389,7 +407,7 @@ body {
 
 #barbers-section .grid-container .card-container .card .card-back .barber-description {
   color: #525252;
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin: 0 1.8em 2em;
   text-align: center;
 }
@@ -414,7 +432,7 @@ body {
 #about-us-section .section-header .line {
   background-color: #C4C4C4;
   width: 1em;
-  height: 0.14em;
+  height: 0.15em;
   margin: 0 4%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -424,7 +442,7 @@ body {
 }
 
 #about-us-section .section-header .section-title {
-  font-size: 2.4em;
+  font-size: 3em;
   color: black;
   text-align: center;
 }
@@ -437,18 +455,23 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 2em;
+  margin: 0 2em 5em;
+}
+
+#about-us-section .flex-container .about-us-description {
+  margin-bottom: 0.5em;
 }
 
 #about-us-section .flex-container .about-us-description h4 {
-  font-size: 1.8em;
+  font-size: 2em;
   letter-spacing: 0.25em;
   color: #343434;
   margin-left: 0.8em;
+  margin-bottom: 0.9em;
 }
 
 #about-us-section .flex-container .about-us-description .description {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: #525252;
 }
 
@@ -457,7 +480,6 @@ body {
 }
 
 #about-us-section .flex-container img {
-  margin-left: 2em;
   margin-top: 1em;
 }
 
@@ -482,7 +504,7 @@ body {
 #gallery-section .section-header .line {
   background-color: white;
   width: 1em;
-  height: 0.14em;
+  height: 0.15em;
   margin: 0 4%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -492,7 +514,7 @@ body {
 }
 
 #gallery-section .section-header .section-title {
-  font-size: 2.4em;
+  font-size: 3em;
   color: white;
   text-align: center;
 }
@@ -607,7 +629,7 @@ body {
 #contact-section .section-header .line {
   background-color: #C4C4C4;
   width: 1em;
-  height: 0.14em;
+  height: 0.15em;
   margin: 0 4%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -617,7 +639,7 @@ body {
 }
 
 #contact-section .section-header .section-title {
-  font-size: 2.4em;
+  font-size: 3em;
   color: black;
   text-align: center;
 }
@@ -652,7 +674,7 @@ body {
 }
 
 #contact-section .grid-container ul li div {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: #525252;
   margin-top: 0;
 }
@@ -677,7 +699,7 @@ body {
   height: 2em;
   border: 0.15em solid transparent;
   border-radius: 0.3em;
-  font-size: 1.6em;
+  font-size: 1.8em;
   padding: 0;
   font-weight: 600;
   color: #525252;
@@ -697,7 +719,7 @@ body {
   height: 8em;
   border: 0.15em solid transparent;
   border-radius: 0.3em;
-  font-size: 1.6em;
+  font-size: 1.8em;
   padding: 0;
   font-weight: 600;
   color: #525252;
@@ -720,11 +742,13 @@ body {
   font-family: 'Rokkitt', serif;
   padding: 0.5em 1.7em;
   font-weight: 600;
-  font-size: 1.7em;
+  font-size: 1.8em;
   margin-top: 2em;
   margin-bottom: 4em;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
   cursor: pointer;
 }
 
@@ -769,7 +793,7 @@ body {
   float: right;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   #services-section .grid-container {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
@@ -782,23 +806,61 @@ body {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
+  #contact-section {
+    display: -ms-grid;
+    display: grid;
+  }
   #contact-section .grid-container {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 3em;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  #contact-section .grid-container #contact-details {
+    margin-right: 5em;
+  }
   #contact-section .grid-container #location-map {
-    width: 27em;
+    width: 52em;
     height: 27em;
+  }
+  #contact-section .input-grid {
+    display: -ms-grid;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    -ms-grid-columns: 35em minmax(1em, 45em);
+        grid-template-columns: 35em minmax(1em, 45em);
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "name email" "message message";
+  }
+  #contact-section .input-grid #name-field {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+    margin-right: 4em;
+  }
+  #contact-section .input-grid #email-field {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: email;
+  }
+  #contact-section .input-grid #message-field {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: message;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   #hero {
     height: 32.5em;
+    background-position-y: -8em;
   }
   #hero .hero-title {
     margin-top: 2em;
@@ -807,8 +869,11 @@ body {
     margin-bottom: 0.5em;
   }
   #services-section .grid-container {
-    -ms-grid-columns: 45% 10% 45%;
-        grid-template-columns: 45% 10% 45%;
+    -ms-grid-columns: 45em minmax(5em, 20em) 45em;
+        grid-template-columns: 45em minmax(5em, 20em) 45em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
         grid-template-areas: "srv-1 icons srv-2" "srv-3 icons srv-4" "srv-5 icons srv-6";
   }
   #services-section .grid-container .icons-container {
@@ -837,19 +902,52 @@ body {
   }
   #barbers-section .grid-container {
     padding: 2em 0 6em;
-    -ms-grid-columns: (auto)[3];
-        grid-template-columns: repeat(3, auto);
+    -ms-grid-columns: (minmax(10em, 34em))[3];
+        grid-template-columns: repeat(3, minmax(10em, 34em));
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   #about-us-section .flex-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 7em;
+  }
+  #about-us-section .flex-container .about-us-description {
+    width: 35em;
+    margin-right: 6em;
   }
   #about-us-section .flex-container .shop-image {
-    width: 50%;
+    width: 45em;
+  }
+}
+
+@media (min-width: 1500px) {
+  #hero {
+    height: 43em;
+    background-position-y: -13em;
+  }
+  #hero .logo {
+    font-size: 2.5em;
+  }
+  #hero .hero-title {
+    margin-top: 2em;
+    font-size: 5em;
+  }
+  #hero .hero-subtitle {
+    font-size: 2em;
+    margin-bottom: 1.5em;
   }
   #gallery-section .grid-container {
+    width: 90em;
+    margin-left: auto;
+    margin-right: auto;
     -ms-grid-rows: 50% 50%;
         grid-template-rows: 50% 50%;
         grid-template-areas: 'img-2 img-1 img-1 img-3 img-5 img-5' 'img-6 img-6 img-7 img-4 img-8 img-8';
@@ -857,35 +955,13 @@ body {
   #gallery-section .grid-container .grid-image {
     height: 15em;
   }
-}
-
-@media (min-width: 1500px) {
-  #hero {
-    height: 35em;
+  #footer .footer-container .logo {
+    font-size: 2.5em;
+    margin-left: 1.5em;
   }
-  #hero .hero-title {
-    margin-top: 2em;
-  }
-  #hero .hero-subtitle {
-    margin-bottom: 1.5em;
-  }
-  #about-us-section .flex-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  #about-us-section .flex-container .shop-image {
-    width: 40%;
-  }
-  #about-us-section .input-grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 40% 60%;
-        grid-template-columns: 40% 60%;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
-        grid-template-areas: "name email" "message message";
+  #footer .footer-container .terms {
+    font-size: 1.4em;
+    margin-right: 3em;
   }
 }
 /*# sourceMappingURL=main.css.map */
